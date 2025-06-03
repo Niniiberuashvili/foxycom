@@ -836,12 +836,14 @@
         <a href=""><h1>Foxicom</h1></a>
         <!--<̶a̶ ̶h̶r̶e̶f̶=̶"̶"̶>̶<̶i̶m̶g̶ ̶s̶r̶c̶=̶"̶/̶s̶t̶a̶t̶i̶c̶/̶i̶m̶a̶g̶e̶s̶/̶l̶o̶g̶i̶n̶m̶a̶n̶a̶g̶e̶r̶w̶h̶i̶t̶e̶.̶p̶n̶g̶"̶ ̶c̶l̶a̶s̶s̶=̶"̶l̶g̶"̶>̶<̶/̶a̶>̶ -->
         <div class="dropdown" style="position: absolute; top: 30%; right: 30px;">
-            <a href="#" id="loginDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+            <a href="account.html" id="loginDropdown" data-bs-toggle="dropdown" aria-expanded="false">
                 <img src="/static/images/loginmanagerwhite.png" class="lg" style="height: 60px;">
             </a>
             <ul class="dropdown-menu dropdown-menu-end flip" aria-labelledby="loginDropdown">
                 {% if current_user.is_authenticated %}
                     <li><span class="dropdown-item-text">{{ current_user.username }}</span></li>
+                    <li><hr class="dropdown-divider"></li> 
+                    <li><a class="dropdown-item" href="{{ url_for('routes.account') }}">See Your Account</a></li>
                     <li><hr class="dropdown-divider"></li>
                     <li><a class="dropdown-item" href="{{ url_for('log.logout') }}">Log Out</a></li>
                 {% else %}
