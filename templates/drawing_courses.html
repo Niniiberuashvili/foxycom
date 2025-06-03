@@ -890,6 +890,8 @@
             <ul class="dropdown-menu dropdown-menu-end flip" aria-labelledby="loginDropdown">
                 {% if current_user.is_authenticated %}
                     <li><span class="dropdown-item-text">{{ current_user.username }}</span></li>
+                    <li><hr class="dropdown-divider"></li> 
+                    <li><a class="dropdown-item" href="{{ url_for('routes.account') }}">See Your Account</a></li>
                     <li><hr class="dropdown-divider"></li>
                     <li><a class="dropdown-item" href="{{ url_for('log.logout') }}">Log Out</a></li>
                 {% else %}
