@@ -96,6 +96,19 @@ def stippling():
 def artistic_drawing():
     return render_template('artistic_drawing.html')
 
+@routes.route('/account')
+@login_required
+def account():
+    return render_template('account.html')
+
+@routes.route('/logout')
+@login_required
+def logout():
+    logout_user()
+    flash("You have been logged out.")
+    return redirect(url_for('routes.home'))
+
+
 @routes.app_errorhandler(404)
 def page_not_found(e):
     return render_template('error.html'), 404
